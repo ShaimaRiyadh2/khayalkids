@@ -128,9 +128,21 @@ h1, h2, h5, p {
 }
 .story-card img {
     width: 100%;
-    transition: all 0.5s ease;
+    height: 250px; /* يمكنك تغيير الارتفاع حسب التصميم */
+    object-fit: cover;
     border-radius: 12px;
 }
+
+.story-card img.story-fixed {
+    width: 100%;
+    height: 230px; /* غيّرها إذا تبغى أطول أو أقصر */
+    object-fit: contain;  /* يظهر الصورة كاملة بدون قص */
+    background: #f8f8f8;   /* خلفية خفيفة للصور الصغيرة */
+    padding: 8px;          /* يبعد الصورة بدل ما تطلع ملتصقة */
+    border-radius: 10px;
+}
+
+
 .story-card img:hover {
     transform: scale(1.05) rotate(2deg);
 }
@@ -292,8 +304,20 @@ body.dark-mode .price-info {
 <!-- ================= FIRST SECTION ================= -->
 <section class="section">
     <div class="container text-center">
-        <h5 class="text-secondary mb-2">أعد قصتك إلى الحياة!</h5>
-        <h1 class="section-title mb-4">اصنع حكاية سحرية تكون أنت بطلها</h1>
+       
+        <h1 class="section-title mb-4">أعد حكاية سحرية يكون طفلـك بطلها</h1>
+    <p style="
+        font-size: 18px;
+        color: #555;
+        margin-top: -5px;
+        background: #f9f4ff;
+        display: inline-block;
+        padding: 10px 18px;
+        border-radius: 12px;
+        border: 1px solid #e5d8ff;
+    ">
+        ارفع صورة طفلك وأدخل اسمه وعمره… وخلال ثوانٍ تصنع له قصة يكون هو بطلها!
+    </p>
         <div class="row g-4 justify-content-center">
             <div class="col-md-4 fade-up">
                 <div class="child-card">
@@ -302,10 +326,11 @@ body.dark-mode .price-info {
             </div>
             <div class="col-md-4 fade-up">
                 <div class="child-card">
-                    <img src="https://placehold.co/400x300?text=طفل2" alt="طفل 2">
+                    <img src="img/2.jpg" alt="طفل 2">
                 </div>
             </div>
         </div>
+         <h5 class="text-secondary mb-2">أصنع قصـة طفلـك بنفسك !</h5>
     </div>
 </section>
 
@@ -319,16 +344,18 @@ body.dark-mode .price-info {
         <div class="row g-4">
             <div class="col-md-3 fade-up">
                 <div class="story-card">
-                    <img src="https://placehold.co/300x300?text=قصة1" alt="قصة1">
+                    <img src="img/story.jpg" alt="قصة1">
                     <div class="story-card-body">
-                        <h5>قصة الأميرات</h5>
+                        <h5>قصة الطبيعـة</h5>
                         <p class="price-info">$25 - $30</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-3 fade-up">
                 <div class="story-card">
-                    <img src="https://placehold.co/300x300?text=قصة2" alt="قصة2">
+                    <img src="img/story1.jpg" alt="قصة2" class="story-fixed">
+                    <br>
+                    <br>
                     <div class="story-card-body">
                         <h5>قصة الديناصورات</h5>
                         <p class="price-info">$25 - $30</p>
@@ -337,9 +364,9 @@ body.dark-mode .price-info {
             </div>
             <div class="col-md-3 fade-up">
                 <div class="story-card">
-                    <img src="https://placehold.co/300x300?text=قصة3" alt="قصة3">
+                    <img src="img/story3.jpg" alt="قصة3">
                     <div class="story-card-body">
-                        <h5>قصة المغامرة</h5>
+                        <h5>قصة الحيوانات</h5>
                         <p class="price-info">$25 - $30</p>
                     </div>
                 </div>
@@ -348,7 +375,7 @@ body.dark-mode .price-info {
                 <div class="story-card">
                     <img src="https://placehold.co/300x300?text=قصة4" alt="قصة4">
                     <div class="story-card-body">
-                        <h5>قصة الحيوانات</h5>
+                        <h5>قصة المغامرة</h5>
                         <p class="price-info">$25 - $30</p>
                     </div>
                 </div>
@@ -361,35 +388,76 @@ body.dark-mode .price-info {
 <section class="section">
     <div class="container">
         <div class="service-section fade-up">
-            هذه الخدمة شغالين عليها حاليا.<br>
-            أضف معلوماتك لتواصل معك بأقرب وقت.
+
+           نعمل بجد لتوفير الخدمة قريبًا مع أكبر مجموعة من القصص المخصصة لطفلـك<br>
+    أضف رقمك أو بريدك الإكتروني ليصلك كل جديد فور الإطلاق.
+
+           
         </div>
     </div>
 </section>
+
 
 <!-- ================= ORDER FORM ================= -->
 <section class="section">
     <div class="container">
         <div class="order-form fade-up">
-            <h3 class="mb-4 text-center">اطلب قصتك المخصصة</h3>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">الاسم</label>
-                    <input type="text" class="form-control" id="name" placeholder="أدخل اسمك">
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">رقم الجوال</label>
-                    <input type="tel" pattern="[0-9]{10,15}" class="form-control" id="phone" placeholder="أدخل رقم جوالك" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">الإيميل</label>
-                    <input type="email" class="form-control" id="email" placeholder="أدخل بريدك الإلكتروني">
-                </div>
-                <p class="price-info">سعر القصة: 25$ - $30</p>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">اطلب الآن</button>
-                </div>
-            </form>
+          <h3 class="mb-4 text-center">اجعل طفلك بطل قصته اليوم</h3>
+            <form id="storyForm">
+    <div class="mb-3">
+        <label for="name" class="form-label">الاسم <span style="color:red">*</span></label>
+        <input type="text" class="form-control" id="name" placeholder="أدخل الاسم">
+        <div class="invalid-feedback" id="nameError" style="display:none;">الرجاء إدخال الاسم</div>
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">رقم الجوال</label>
+        <input type="tel" pattern="[0-9]{10,15}" class="form-control" id="phone" style="text-align: right;" placeholder="أدخل رقم الجوال">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">الإيميل</label>
+        <input type="email" class="form-control" id="email" placeholder="أدخل البريد الإلكتروني">
+        <div class="invalid-feedback" id="contactError" style="display:none;">الرجاء إدخال رقم الجوال أو البريد الإلكتروني على الأقل</div>
+    </div>
+
+    <p class="price-info">
+        احصل على قصة طفلك الفريدة بسعر رائع يتراوح بين 25$ - 30$!
+    </p>
+
+    <div class="text-center mt-3">
+        <button type="submit" class="btn btn-primary">اطلب الآن</button>
+    </div>
+</form>
+
+<script>
+document.getElementById('storyForm').addEventListener('submit', function(e) {
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    let valid = true;
+
+    // تحقق الاسم
+    if (!name) {
+        document.getElementById('nameError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('nameError').style.display = 'none';
+    }
+
+    // تحقق الرقم أو البريد
+    if (!phone && !email) {
+        document.getElementById('contactError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('contactError').style.display = 'none';
+    }
+
+    if (!valid) {
+        e.preventDefault();
+    }
+});
+</script>
+
         </div>
     </div>
 </section>
